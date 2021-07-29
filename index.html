@@ -1,0 +1,151 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
+  <link href="../styles/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+  <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="logo"> </div>
+  </div>
+
+  <div class="form-container">
+    <div class="wrapper">
+        <div class="title">
+          enter up to 8 questions </br> (answers optional)
+        </div>
+        <form class="form" id="form">
+          <div class="input_field">
+            <label>question 1:</label>
+            <input type="text" class="input" name="q1">
+            <input type="text" class="input" name="a1" placeholder="answer (optional)">
+          </div>
+          <div class="input_field">
+            <label>question 2:</label>
+            <input type="text" class="input" name="q2">
+            <input type="text" class="input" name="a2" placeholder="answer (optional)">
+          </div>
+<!--           <div class="input_field">
+            <label>question 3:</label>
+            <input type="text" class="input">
+            <input type="text" class="input" placeholder="answer (optional)">
+          </div>
+          <div class="input_field">
+            <label>question 4:</label>
+            <input type="text" class="input">
+            <input type="text" class="input" placeholder="answer (optional)">
+          </div>
+          <div class="input_field">
+            <label>question 5:</label>
+            <input type="text" class="input">
+            <input type="text" class="input" placeholder="answer (optional)">
+          </div>
+          <div class="input_field">
+            <label>question 6:</label>
+            <input type="text" class="input">
+            <input type="text" class="input" placeholder="answer (optional)">
+          </div>
+          <div class="input_field">
+            <label>question 7:</label>
+            <input type="text" class="input">
+            <input type="text" class="input" placeholder="answer (optional)">
+          </div>
+          <div class="input_field">
+            <label>question 8:</label>
+            <input type="text" class="input">
+            <input type="text" class="input" placeholder="answer (optional)">
+          </div> -->
+          <div class="input_field">
+            <input type="submit" value="play game" class="btn" id="btn">
+          </div>
+        </form>
+      </div>
+</div>
+
+  <div class="main-container">
+    <div class="grid-container">
+      <div class="row-1">
+        <div class="question" id="0" onclick="flip();">
+          <h1>1</h1>
+          <p id="p"></p>
+        </div>
+        <div class="question">
+          <h1>2</h1>
+          <p>What's your favorite color?</p>
+        </div>
+        <div class="question">
+          <h1>3</h1>
+          <p>How old are you?</p>
+        </div>
+      </div>
+      <div class="row-2">
+        <div class="question">
+          <h1>4</h1>
+          <p>What's your favorite food?</p>
+        </div>
+        <div class="start-button" id="start-button">
+          <h1>START</h1>
+        </div>
+        <div class="question">
+          <h1>5</h1>
+          <p>What's your favorite animal?</p>
+        </div>
+      </div>
+      <div class="row-3">
+        <div class="question">
+          <h1>6</h1>
+          <p>How are you?</p>
+        </div>
+        <div class="question">
+          <h1>7</h1>
+          <p>What's your name?</p>
+        </div>
+        <div class="question">
+          <h1>8</h1>
+          <p>Where are you from?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="lower-container">
+    <div class="actions-container">
+      <div class="action">
+        <h1>
+          <span class="material-icons md-48">
+            music_note
+            </span>
+        </h1>
+      </div>
+      <div class="action">
+        <h1>
+         <span class="material-icons md-48">
+            accessibility
+            </span> 
+        </h1>
+      </div>
+      <div class="action">
+        <h1>
+          <span class="material-icons md-48">
+            sports_soccer
+            </span>      
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="footer" id="footer">
+  </div>
+
+  <script src="main.js"></script>
+
+</body>
+
+
+
+
+
