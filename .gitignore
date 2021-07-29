@@ -1,0 +1,2 @@
+#don't need to copy the large directory Node Modules to the repository
+/node_modules

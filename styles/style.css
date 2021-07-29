@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+
+* {
+  margin: o;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  
+}
+/* 
+.form-container {
+  height: 0px;
+  width: 0px;
+  visibility: hidden;
+} */
+
+.wrapper {
+  width: 90%;
+  height: 100%;
+  background: #fff;
+  margin: 20px auto;
+  padding: 30px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
+  margin-top: 2%;
+}
+
+.wrapper .title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  color: #fec107;
+  text-align: center;
+
+}
+
+.wrapper .form {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .form .input_field {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .form .input_field label {
+  
+  width: 200px;
+  color: black;
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.wrapper .form .input_field .input{
+  width: 100%;
+  outline: none;
+  border: 1px solid #d5dbd9;
+  font-size: 15px;
+  padding: 8px 10px;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+  
+}
+
+.wrapper .form .input_field .input:focus{
+  border: 1px solid #fec107;
+}
+
+.wrapper .form .input_field .btn {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 8px 10px;
+  font-size: 15px;
+  border: 0;
+  background: #fec107;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 3px;
+  outline: none;
+}
+
+.wrapper .form .input_field:last-child {
+  margin-bottom: 0;
+}
+
+.wrapper .form .input_field .btn:hover {
+  background: #ffd658;
+}
+
+@media (max-width: 600px) {
+  .wrapper .form .input_field {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .wrapper {
+      height: 170%;
+  }
+
+}
+
+
+
+body {
+  text-align: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.topbar {
+  display: flex;
+  background-color: linear-gradient(red, yellow);
+  color: white;
+  height: 10%;
+  background-image: url('../src/images/logo2.png');
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+
+
+.main-container {  
+  visibility: visible;
+  width: 100%;
+  height: 75%;
+}
+
+.main-container .grid-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+  height: 50%;
+}
+
+.main-container .grid-container .row-1, .row-2, .row-3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.main-container .grid-container .row-1 > div {
+  height: 18vh;
+  width: 30vw;
+  margin: 0.8rem;
+}
+
+.main-container .grid-container .row-2 > div {
+  height: 18vh;
+  width: 30vw;
+  margin: 0.8rem;
+}
+
+.main-container .grid-container .row-3 > div {
+  height: 18vh;
+  width: 30vw;
+  margin: 0.8rem;
+}
+
+.question {
+  background: rgb(56, 171, 209);
+  color: #fff;
+  font-size:1.5rem;
+  border-radius: 10px;
+  box-shadow: 3px 2px rgb(86, 94, 99);
+}
+
+
+.question h1 {
+  visibility: visible;
+}
+
+.question p {
+  visibility: hidden;
+  margin-top: -100px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.start-button {
+  background: rgb(8, 255, 50);
+  color: #fff;
+  font-size:1.5rem;
+  border-radius: 10px;
+  box-shadow: 3px 2px rgb(86, 94, 99);
+}
+
+.start-button:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite; 
+  cursor: pointer;
+}
+
+.start-button h1 {
+  margin-top: 15px;
+  text-shadow: 1px 1px rgb(58, 58, 58);
+}
+.flipped {
+  background: rgb(255, 180, 17);
+  position: fixed;
+  top: 10vh;
+  left: 5vw;;
+  height: 63vh !important;
+  width: 89vw !important;
+  z-index: 1000;
+}
+
+.flipped h1{
+  visibility: hidden;
+}
+
+.flipped p {
+  visibility: visible;
+  color: white;
+  font-size: 6rem;
+}
+
+@media only screen and (max-width: 875px) {
+
+  .question h1 {
+    margin-top: 40px;
+  }
+
+  .main-container .grid-container {
+    margin-top: 30px;
+  }
+ 
+  .lower-container .actions-container {
+    margin-top: -100px;
+  }
+
+  .main-container .grid-container .row-1 > div {
+    height: 15vh;
+    width: 25vw;
+    margin: 0.5rem;
+  }
+  .main-container .grid-container .row-2 > div {
+    height: 15vh;
+    width: 25vw;
+    margin: 0.5rem;
+  }
+  .main-container .grid-container .row-3 > div {
+    height: 15vh;
+    width: 25vw;
+    margin: 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 875px) {
+  .question h1, .start-button h1 {
+    font-size: 2rem;
+  }
+}
+
+
+@media only screen and (max-width: 875px) {
+  .flipped p {
+    font-size: 5rem;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .flipped p {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .flipped p {
+    font-size: 3rem;
+  }
+  .start-button {
+    font-size: 1rem;
+  }
+}
+
+
+.lower-container { 
+  margin-top: -50px;
+  width: 100%;
+  height: 10%;
+}
+
+.lower-container .actions-container {
+  margin-right: auto;
+  margin-left: auto;
+  width: 90%;
+  height: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content:center
+}
+
+.lower-container .actions-container .action{
+  margin: 50px;
+  margin-top: 0px;
+}
+
+.lower-container .actions-container .action h1{
+  background: rgb(255, 180, 17);
+  color: rgb(255, 255, 255);
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 3px 2px grey;
+}
+
+.lower-container .actions-container .action h1:hover{
+  border: 5px solid rgb(255, 180, 17);
+}
+
+
+.action-chosen {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite; 
+}
+
+.action-chosen h1 {
+  background: slateblue !important;
+}
+
+.material-icons.md-48 { font-size: 48px; }
+
+
+@media only screen and (max-width: 500px) {
+  .lower-container .actions-container .action {
+      margin-left: 25px;
+      margin-right: 25px;
+   }
+}
+
+@media only screen and (max-width: 400px) {
+  .lower-container .actions-container .action {
+      margin-left: 10px;
+      margin-right: 10px;
+   }
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
