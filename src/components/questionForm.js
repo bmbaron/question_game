@@ -1,101 +1,78 @@
 const questionForm = (() => {
-    const myForm = document.getElementById('form');    
+
+
+    const form = document.getElementById('form');    
     const submitButton = document.getElementById('btn');
+    const wrapper = document.getElementById('wrapperLeft');
+    let qBoxes = document.getElementsByClassName("question");
+    let json;
+
+    wrapper.onmouseenter = function(){
+      this.classList.add('wrapperLeftShow');
+    };
+  
+      wrapper.onmouseleave = function(){
+      this.classList.remove('wrapperLeftShow');
+     }; 
+
     submitButton.onclick = function(e) {
       e.preventDefault();
+/* 
+      Array.prototype.forEach.call(qBoxes, function (box) {
+        while (box.firstChild) {
+          if(box.lastChild.tagName != 'H1') {
+            box.removeChild(box.lastChild);
+          }
+          else {
+            break;
+          }
+        }
+        console.log(box);
+      }); */
     
-      let formData = new FormData(myForm);
-      let object = {};
+      //wrapper.classList.remove('wrapperLeftShow')
+
+      let formData = new FormData(form);
+      let questions = {};
+
       formData.forEach(function(value, key){
-          object[key] = value;
+          questions[key] = value;
       });
-      let json = JSON.stringify(object);
-      alert("hello");
-      return(json);
+
+      console.log(questions);
+      attachQuestions(questions);
+
+      //json = JSON.stringify(questions);
+      //console.log(json);
     };
 
-    
-/* 
-     const getDataFromForm = (e) => {
-        e.preventDefault();
-    
-        let formData = new FormData(myForm);
-        let object = {};
-        formData.forEach(function(value, key){
-            object[key] = value;
-        });
-        let json = JSON.stringify(object);
-        return(json);
-    };  */
-    
-    return {
-      myForm,
-      submitButton
+    const attachQuestions = (questions) => {
+        let i = 0;
+
+        for (let value of Object.values(questions)) {
+            //qBoxes[i].textContent = '';
+            //document.querySelectorAll('.question p')[0].innerHTML = '';
+            //console.log("We need to delete: " + document.querySelectorAll('.question p')[0].innerHTML);
+            if(typeof qBoxes[i] != 'undefined')
+            {
+              qBoxes[i].children[1].remove();
+
+              let questionText = String(value);
+              let qText = document.createElement('p');
+              qText.innerHTML = questionText;
+              qBoxes[i].appendChild(qText);
+              console.log("final element text is: " + qBoxes[i].innerHTML);
+            }
+            i++;
+        }
     };
+    return {
+      attachQuestions
+
+    };
+    
   })();
-  
-  
+
   export {
     questionForm
   }
-/* let start = document.getElementById('start-button').addEventListener("click", chooseQuestion );
-const timer = ms => new Promise(res => setTimeout(res, ms));
-let questions = document.getElementsByClassName('question');
-let actions = document.getElementsByClassName('action');
-
-async function chooseQuestion () {
-    
-    let randomNum = Math.floor(Math.random() * questions.length+1);
-    for(var i = 0; i < randomNum; i++)
-    {
-
-        questions[i].style.backgroundColor = "rgb(255, 180, 17)";
-        await timer(200);
-        questions[i].style.backgroundColor = "rgb(6, 163, 216)";
-       if(i == randomNum-1) {            
-            questions[i].style.backgroundColor = "rgb(255, 180, 17)";
-            await timer(200);
-            questions[i].style.backgroundColor = "rgb(6, 163, 216)";
-            await timer(200);
-            questions[i].style.backgroundColor = "rgb(255, 180, 17)";
-            await timer(200);
-            questions[i].style.backgroundColor = "rgb(6, 163, 216)";
-            await timer(200);
-            questions[i].style.backgroundColor = "rgb(255, 180, 17)";
-            await timer(200);
-            questions[i].style.backgroundColor = "rgb(6, 163, 216)";
-            await timer(200);
-            questions[i].style.backgroundColor = "rgb(255, 180, 17)";
-            await timer(200);
-            questions[i].style.backgroundColor = "rgb(255, 180, 17)";
-            await timer(200);
-            questions[i].classList.toggle('flipped');
-            await timer(2000);
-            
-            let action = 'sing';
-            chooseAction();
-
-            await timer(1000);
-            switch (action) {
-                case 'sing':
-                    //questions[i].childNodes[3].innerHTML += "</br> <strong> (sing) </strong>";
-                    break;
-            }
-            await timer(3000);
-            questions[i].classList.toggle('flipped');
-            questions[i].style.backgroundColor = "rgb(6, 163, 216)";
-            
-       }
-
-    }
-    //let randomNum = Math.floor(Math.random() * questions.length);
-    //questions[randomNum].style.backgroundColor = "red";
-}
-
-async function chooseAction () {
-    let randomAct = Math.floor(Math.random()*3);
-    actions[randomAct].classList.toggle('action-chosen');
-    await timer(1000);
-    actions[randomAct].classList.toggle('action-chosen');
-    return 'sing';
-   } */

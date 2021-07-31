@@ -1,17 +1,20 @@
 const generator = (() => {
-    const questionBoxes = document.getElementsByClassName('question');
     const actions = document.getElementsByClassName('action');
     const startButton = document.getElementById('start-button');
-
+    let questionBoxes = document.getElementsByClassName('question');
     const timer = ms => new Promise(res => setTimeout(res, ms));
 
     const chooseQuestion = async () => {
-    
-        //let randomNum = Math.floor(Math.random() * questionBoxes.length+1);
-        let randomNum = 1;
+
+        questionBoxes = document.getElementsByClassName('question');
+        let randomNum = Math.floor(Math.random() * questionBoxes.length+1);
+
+/*         if (questionBoxes.length == 0)
+        {
+          alert("no more");
+        } */
         for(var i = 0; i < randomNum; i++)
         {
-          console.log("hello" + document.getElementById("p").innerHTML);
 
             questionBoxes[i].style.backgroundColor = "rgb(255, 180, 17)";
             await timer(200);
@@ -34,9 +37,9 @@ const generator = (() => {
                 questionBoxes[i].style.backgroundColor = "rgb(255, 180, 17)";
                 await timer(200);
                 questionBoxes[i].classList.toggle('flipped');
-                //await timer(2000);
+                await timer(2000);
                 
-                let action = 'sing';
+/*                 let action = 'sing';
                 chooseAction();
     
                 //await timer(1000);
@@ -44,12 +47,14 @@ const generator = (() => {
                     case 'sing':
                         //questionBoxes[i].childNodes[3].innerHTML += "</br> <strong> (sing) </strong>";
                         break;
-                }
+                } */
                 //await timer(3000);
                 await timer (1000);
                 questionBoxes[i].classList.toggle('flipped');
                 questionBoxes[i].style.backgroundColor = "rgb(6, 163, 216)";
-           }
+                //questionBoxes[i].classList.add("hidden");
+                questionBoxes[i].remove();
+            }
         }
     };
 
@@ -62,11 +67,10 @@ const generator = (() => {
         return 'sing';
     };
 
-    const updateQuestion = async (question) => {
-      console.log(question);
-      console.log(question.toString());
-      document.getElementById("p").textContent = question.toString();
-      console.log(document.getElementById("p").innerHTML);
+    const updateQuestion = () => {
+
+      console.log("It stuck: " + document.getElementById("first").innerHTML);
+    
     };
 
     
