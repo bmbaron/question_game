@@ -11,110 +11,145 @@
 <body>
 
   <div class="topbar">
-    <div class="logo"> </div>
+    <img class="logo">
+    <div class="category" id="category">click arrow for categories</div>
+    <button class="arrow" id="arrow"></button>
   </div>
 
   <div class="form-container">
-    <div class="wrapper">
+    <div class="wrapper wrapperLeft" id="wrapperLeft">
         <div class="title">
-          enter up to 8 questions </br> (answers optional)
+          enter up to 9 questions
         </div>
         <form class="form" id="form">
           <div class="input_field">
             <label>question 1:</label>
             <input type="text" class="input" name="q1">
-            <input type="text" class="input" name="a1" placeholder="answer (optional)">
+            <!-- <input type="text" class="input" placeholder="answer (optional)"> -->
           </div>
           <div class="input_field">
             <label>question 2:</label>
             <input type="text" class="input" name="q2">
-            <input type="text" class="input" name="a2" placeholder="answer (optional)">
           </div>
-<!--           <div class="input_field">
+          <div class="input_field">
             <label>question 3:</label>
-            <input type="text" class="input">
-            <input type="text" class="input" placeholder="answer (optional)">
+            <input type="text" class="input" name="q3">
           </div>
           <div class="input_field">
             <label>question 4:</label>
-            <input type="text" class="input">
-            <input type="text" class="input" placeholder="answer (optional)">
+            <input type="text" class="input" name="q4">
           </div>
           <div class="input_field">
             <label>question 5:</label>
-            <input type="text" class="input">
-            <input type="text" class="input" placeholder="answer (optional)">
+            <input type="text" class="input" name="q5">
           </div>
           <div class="input_field">
             <label>question 6:</label>
-            <input type="text" class="input">
-            <input type="text" class="input" placeholder="answer (optional)">
+            <input type="text" class="input" name="q6">
           </div>
           <div class="input_field">
             <label>question 7:</label>
-            <input type="text" class="input">
-            <input type="text" class="input" placeholder="answer (optional)">
+            <input type="text" class="input" name="q7">
           </div>
           <div class="input_field">
             <label>question 8:</label>
-            <input type="text" class="input">
-            <input type="text" class="input" placeholder="answer (optional)">
-          </div> -->
+            <input type="text" class="input" name="q8">
+          </div>
           <div class="input_field">
-            <input type="submit" value="play game" class="btn" id="btn">
+            <label>question 9:</label>
+            <input type="text" class="input" name="q9">
+          </div>
+          <div class="input_field">
+            <input type="submit" value="update questions" class="btn" id="btn">
           </div>
         </form>
       </div>
-</div>
+</div> 
+ 
+<!-- <div class="topics-container">
+  <div class="wrapper wrapperRight" id="wrapperRight">
+      <div class="title">
+        enter up to 8 questions </br> (answers optional)
+      </div>
+      <form class="form2" id="form2">
+        <div class="input_field">
+          <label>question 1:</label>
+          <input type="text" class="input" name="q1">
+          <input type="text" class="input" placeholder="answer (optional)">
+        </div>
+        <div class="choose_topic">
+          <label>What kind of game do you want?</label>
+          <select id="cars" name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+          </select>
+        </div> -->
+<!-- 
+        <div class="input_field">
+          <input type="submit" value="play game" class="btn" id="btn">
+        </div>
+      </form>
+    </div>
+</div> -->
+
 
   <div class="main-container">
     <div class="grid-container">
       <div class="row-1">
-        <div class="question" id="0" onclick="flip();">
+        <div class="question" id="first" onclick="flip();">
           <h1>1</h1>
-          <p id="p"></p>
+          <p></p>
         </div>
         <div class="question">
           <h1>2</h1>
-          <p>What's your favorite color?</p>
+          <p></p>
+          <!-- <p>What's your favorite color?</p> -->
         </div>
         <div class="question">
           <h1>3</h1>
-          <p>How old are you?</p>
+          <p></p>
         </div>
       </div>
       <div class="row-2">
         <div class="question">
           <h1>4</h1>
-          <p>What's your favorite food?</p>
-        </div>
-        <div class="start-button" id="start-button">
-          <h1>START</h1>
+          <p></p>
         </div>
         <div class="question">
           <h1>5</h1>
-          <p>What's your favorite animal?</p>
+          <p></p>
+        </div>
+        <div class="question">
+          <h1>6</h1>
+          <p></p>
         </div>
       </div>
       <div class="row-3">
         <div class="question">
-          <h1>6</h1>
-          <p>How are you?</p>
-        </div>
-        <div class="question">
           <h1>7</h1>
-          <p>What's your name?</p>
+          <p></p>
         </div>
         <div class="question">
           <h1>8</h1>
-          <p>Where are you from?</p>
+          <p></p>
+        </div>
+        <div class="question">
+          <h1>9</h1>
+          <p></p>
         </div>
       </div>
     </div>
+    <div class="start-button" id="start-button">
+      <h1 id="start-text">START</h1>
+    </div>
   </div>
 
+
+
   <div class="lower-container">
-    <div class="actions-container">
+   <!--  <div class="actions-container">
       <div class="action">
         <h1>
           <span class="material-icons md-48">
@@ -136,7 +171,7 @@
             </span>      
         </h1>
       </div>
-    </div>
+    </div> -->
   </div>
   <div class="footer" id="footer">
   </div>
