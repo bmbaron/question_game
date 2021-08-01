@@ -1,40 +1,60 @@
 import {generator} from './components/questionActionGenerator.js'
 import {questionForm} from './components/questionForm.js'
 import {categories} from './components/categories.js'
+import {layout} from './components/layoutBuilder.js'
 
-
-let counter = 0;
 
 const mainModule = (() => {
 
+    
+
     let arrow = document.getElementById('arrow');
     let category = document.getElementById('category');
+    let color = document.getElementsByTagName("BODY")[0];
 
-    console.log(arrow);
+    let counter = 0;
+    
+    window.addEventListener("load", function(){
+        layout.builder();
+    });
+
     arrow.onclick = function () {
+        layout.builder();
+        categoryClick();
 
+    };
+
+    const categoryClick = () => {
         if (counter == 0) {
-            questionForm.attachQuestions(categories.foods);
+            layout.loadQuestions(categories.foods);
             category.textContent = "foods";
+            color.style.background = "#d14238";
         }
 
         if (counter == 1) {
-            questionForm.attachQuestions(categories.animals);
+            layout.loadQuestions(categories.animals);
             category.textContent = "animals";
-            counter = counter - 2;
+            color.style.background = "#4a38d1";
+        }
+        if (counter == 2) {
+            layout.loadQuestions(categories.places);
+            category.textContent = "places";
+            counter = counter - 3;
+            color.style.background = "#e82788"; 
         }
         counter++;
     };
 
+
     generator.startButton.onclick = function (e) {
-        console.log(generator.questionBoxes.length);
         if(generator.questionBoxes.length == 1)
         {
             document.getElementById('start-text').innerHTML = "play again";
         }
         if(generator.questionBoxes.length == 0)
         {
-            location.reload();
+            layout.builder();
+            categoryClick();
         }
         else {
         generator.chooseQuestion();

@@ -1,11 +1,13 @@
-const questionForm = (() => {
+import {layout} from './layoutBuilder.js'
 
+
+const questionForm = (() => {
+/* 
 
     const form = document.getElementById('form');    
     const submitButton = document.getElementById('btn');
     const wrapper = document.getElementById('wrapperLeft');
-    let qBoxes = document.getElementsByClassName("question");
-    let json;
+
 
     wrapper.onmouseenter = function(){
       this.classList.add('wrapperLeftShow');
@@ -28,9 +30,11 @@ const questionForm = (() => {
           }
         }
         console.log(box);
-      }); */
-    
-      //wrapper.classList.remove('wrapperLeftShow')
+      }); 
+
+      wrapper.classList.remove('wrapperLeftShow');
+
+      layout.builder();
 
       let formData = new FormData(form);
       let questions = {};
@@ -39,35 +43,12 @@ const questionForm = (() => {
           questions[key] = value;
       });
 
-      console.log(questions);
-      attachQuestions(questions);
+      layout.loadQuestions(questions);
 
-      //json = JSON.stringify(questions);
-      //console.log(json);
     };
+ */
 
-    const attachQuestions = (questions) => {
-        let i = 0;
-
-        for (let value of Object.values(questions)) {
-            //qBoxes[i].textContent = '';
-            //document.querySelectorAll('.question p')[0].innerHTML = '';
-            //console.log("We need to delete: " + document.querySelectorAll('.question p')[0].innerHTML);
-            if(typeof qBoxes[i] != 'undefined')
-            {
-              qBoxes[i].children[1].remove();
-
-              let questionText = String(value);
-              let qText = document.createElement('p');
-              qText.innerHTML = questionText;
-              qBoxes[i].appendChild(qText);
-              console.log("final element text is: " + qBoxes[i].innerHTML);
-            }
-            i++;
-        }
-    };
     return {
-      attachQuestions
 
     };
     
