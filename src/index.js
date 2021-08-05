@@ -15,10 +15,12 @@ const mainModule = (() => {
     let counter = 0;
     
     window.addEventListener("load", function(){
+        document.getElementById('start-button').style.visibility = 'hidden';
         layout.builder();
     });
 
     arrow.onclick = function () {
+        document.getElementById('start-button').style.visibility = 'visible'; 
         layout.builder();
         categoryClick();
 

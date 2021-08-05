@@ -207,6 +207,8 @@ body {
   margin-left: auto;
   width: 90%;
   height: 83%;
+  margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 
@@ -215,7 +217,6 @@ body {
   flex-direction: row;
   justify-content: center;
 }
-
 
 .main-container .grid-container .row-1 > div {
   height: 18vh;
@@ -240,7 +241,6 @@ body {
   color: #fff;
   font-size:1.5rem;
   border-radius: 10px;
-  box-shadow: 3px 2px rgb(86, 94, 99);
   text-align: center;
   justify-content: center;
 }
@@ -258,6 +258,17 @@ body {
   margin-right: 10px;
 }
 
+.question img {
+  visibility: hidden;
+  width: auto;
+  height: 60%;
+}
+
+.question button {
+  visibility: hidden;
+}
+
+
 .start-button {
   margin-top: 3%;
   background: #38d15e;
@@ -267,7 +278,7 @@ body {
   min-width: 180px;
   margin-left: auto;
   margin-right: auto;
-  font-size:1.5rem;
+  font-size:1.3rem;
   border-radius: 10px;
   box-shadow: 3px 2px black;
 }
@@ -282,25 +293,55 @@ body {
   text-shadow: 1px 1px rgb(58, 58, 58);
 }
 .flipped {
-  background: rgb(255, 180, 17);
+  backdrop-filter: blur(5px);
+  /*background: rgb(255, 180, 17); */
   position: fixed;
-  top: 12vh;
-  left: 5vw;;
-  height: 67vh !important;
-  width: 89vw !important;
+  top: 0;
+  left: 0w;;
+  height: 100vh !important;
+  width: 100vw !important;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
 }
 
 .flipped h1{
   visibility: hidden;
 }
 
-.flipped p {
-  margin: 1%;
-  margin-top: 5px;
+
+.flipped img {
   visibility: visible;
-  color: white;
-  font-size: 4rem;
+  flex-grow: 1;
+  margin-top: -3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  padding: 0;
+  border-radius: 20px;
+
+}
+
+.flipped .buttonBox {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  margin-bottom: 3rem;
+}
+
+.flipped .buttonBox button {
+  flex-grow: 1;
+  visibility: visible;
+  font-size: 2rem;
+  height: auto;
+  margin:0;
+  opacity: 0.8;
+  border-radius: 20px;
+}
+.flipped .buttonBox button:hover {
+  opacity: 1;
+  background-color: white;
 }
 
 @media only screen and (max-width: 875px) {
@@ -356,6 +397,9 @@ body {
   .flipped p {
     margin-top: -50px;
     font-size: 3.5rem;
+  }
+  .start-button {
+    font-size: 1rem;
   }
 }
 

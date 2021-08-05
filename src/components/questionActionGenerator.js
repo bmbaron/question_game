@@ -1,3 +1,5 @@
+
+
 const generator = (() => {
     const actions = document.getElementsByClassName('action');
     const startButton = document.getElementById('start-button');
@@ -34,7 +36,7 @@ const generator = (() => {
                 await timer(200);
                 questionBoxes[i].style.backgroundColor = "rgb(255, 180, 17)";
                 await timer(200);
-                questionBoxes[i].style.backgroundColor = "rgb(255, 180, 17)";
+                questionBoxes[i].style.background = "none";
                 await timer(200);
                 questionBoxes[i].classList.toggle('flipped');
                 await timer(2000);
@@ -50,22 +52,21 @@ const generator = (() => {
                 } */
                 //await timer(3000);
                 await timer (1000);
-                questionBoxes[i].classList.toggle('flipped');
-                questionBoxes[i].style.backgroundColor = "rgb(6, 163, 216)";
+                //questionBoxes[i].classList.toggle('flipped');
                 //questionBoxes[i].classList.add("hidden");
-                questionBoxes[i].remove();
+                //questionBoxes[i].remove();
             }
         }
     };
 
 
-    const chooseAction = async () => {
-        let randomAct = Math.floor(Math.random()*3);
-        actions[randomAct].classList.toggle('action-chosen');
-        await timer(1000);
-        actions[randomAct].classList.toggle('action-chosen');
-        return 'sing';
-    };
+  
+    const deleteQuestion = (index) => {
+
+      questionBoxes[index].remove();
+    
+    };  
+
 
     const updateQuestion = () => {
 
@@ -79,7 +80,7 @@ const generator = (() => {
       updateQuestion,
       startButton,
       chooseQuestion,
-      chooseAction,
+      deleteQuestion
     };
 })();
   
