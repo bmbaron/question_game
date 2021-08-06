@@ -1,6 +1,7 @@
-import {generator} from './questionActionGenerator.js'
+import { musicManager } from './musicManager.js';
 
 const layout = (() => {
+
     const gridContainer = document.getElementById('grid-container');
 
     const builder = () => {
@@ -66,8 +67,16 @@ const layout = (() => {
 
                 setAnswerText(questions, key, answerLeft, answerRight);
 
-                answerLeft.onclick = function () { checkAnswer(img.alt, this.innerText, this); };
-                answerRight.onclick = function () { checkAnswer(img.alt, this.innerText, this); };
+                answerLeft.onclick = function () {
+                    this.disabled = true;
+                    answerRight.disabled = true;
+                    checkAnswer(img.alt, this.innerText, this); 
+                };
+                answerRight.onclick = function () {
+                    this.disabled = true;
+                    answerLeft.disabled = true;
+                    checkAnswer(img.alt, this.innerText, this);
+                };
 
 
                 let buttonBox = document.createElement('div');
@@ -85,9 +94,11 @@ const layout = (() => {
     const checkAnswer = async (answer, choice, button) => {
         if (choice == answer)
         {
-            button.style.background = "green";
+            musicManager.winSound();
+            button.style.background = "#38d15e";
         }
         else {
+            musicManager.loseSound();
             button.style.background = "red";
         }
 

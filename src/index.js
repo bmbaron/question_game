@@ -1,23 +1,22 @@
 import {generator} from './components/questionActionGenerator.js'
-import {questionForm} from './components/questionForm.js'
 import {categories} from './components/categories.js'
 import {layout} from './components/layoutBuilder.js'
+import { musicManager } from './components/musicManager.js';
 
 
 const mainModule = (() => {
 
-    
-
     let arrow = document.getElementById('arrow');
     let category = document.getElementById('category');
     let color = document.getElementsByTagName("BODY")[0];
-
     let counter = 0;
     
     window.addEventListener("load", function(){
         document.getElementById('start-button').style.visibility = 'hidden';
         layout.builder();
     });
+
+
 
     arrow.onclick = function () {
         document.getElementById('start-button').style.visibility = 'visible'; 
@@ -30,7 +29,7 @@ const mainModule = (() => {
         if (counter == 0) {
             layout.loadQuestions(categories.foods);
             category.textContent = "foods";
-            color.style.background = "#d14238";
+            color.style.background = "#EE8609";
         }
 
         if (counter == 1) {
@@ -54,12 +53,13 @@ const mainModule = (() => {
             document.getElementById('start-text').innerHTML = "play again";
         }
         if(generator.questionBoxes.length == 0)
-        {
+        {   
             layout.builder();
             categoryClick();
         }
         else {
-        generator.chooseQuestion();
+            musicManager.questionSound();
+            generator.chooseQuestion();
         }
     };
 /* 

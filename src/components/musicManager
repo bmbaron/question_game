@@ -1,0 +1,32 @@
+
+import {Howl, Howler} from 'howler';
+
+
+    var background = new Howl({
+        src: ['../src/sounds/Happy_Sunset.wav'],
+/*             sprite: {
+            main: [2460, 8842, true]
+        }, */
+        autoplay: true,
+        loop: 1,
+        volume: 0.2
+    });
+
+    let music = document.getElementById('music');
+
+
+    music.onclick = function () {
+        if(music.children[0].innerText == 'music_note') {
+            music.children[0].innerText = 'music_off';
+            music.style.background = 'red';
+            background.stop();
+            return;
+        }
+        else {
+            music.children[0].innerText = 'music_note';
+            music.style.background = '#38d15e';
+            background.play();
+            return;
+        }
+        //music.children[0].innerText = 'music_off';
+    };

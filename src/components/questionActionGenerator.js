@@ -1,5 +1,3 @@
-
-
 const generator = (() => {
     const actions = document.getElementsByClassName('action');
     const startButton = document.getElementById('start-button');
@@ -7,6 +5,7 @@ const generator = (() => {
     const timer = ms => new Promise(res => setTimeout(res, ms));
 
     const chooseQuestion = async () => {
+
 
         questionBoxes = document.getElementsByClassName('question');
         let randomNum = Math.floor(Math.random() * questionBoxes.length+1);
@@ -19,26 +18,28 @@ const generator = (() => {
         {
 
             questionBoxes[i].style.backgroundColor = "rgb(255, 180, 17)";
-            await timer(200);
+            await timer(150);
             questionBoxes[i].style.backgroundColor = "rgb(6, 163, 216)";
            if(i == randomNum-1) {            
                 questionBoxes[i].style.backgroundColor = "rgb(255, 180, 17)";
-                await timer(200);
+                await timer(100);
                 questionBoxes[i].style.backgroundColor = "rgb(6, 163, 216)";
-                await timer(200);
+                await timer(100);
                 questionBoxes[i].style.backgroundColor = "rgb(255, 180, 17)";
-                await timer(200);
+                await timer(100);
                 questionBoxes[i].style.backgroundColor = "rgb(6, 163, 216)";
-                await timer(200);
+                await timer(100);
                 questionBoxes[i].style.backgroundColor = "rgb(255, 180, 17)";
-                await timer(200);
+                await timer(100);
                 questionBoxes[i].style.backgroundColor = "rgb(6, 163, 216)";
-                await timer(200);
+                await timer(100);
                 questionBoxes[i].style.backgroundColor = "rgb(255, 180, 17)";
-                await timer(200);
-                questionBoxes[i].style.background = "none";
-                await timer(200);
+                await timer(100);
+                questionBoxes[i].style.backgroundColor = "rgb(6, 163, 216)";
+                await timer(100);
                 questionBoxes[i].classList.toggle('flipped');
+                questionBoxes[i].style.backgroundColor = "rgb(255, 180, 17)";
+
                 await timer(2000);
                 
 /*                 let action = 'sing';
