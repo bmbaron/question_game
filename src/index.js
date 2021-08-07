@@ -13,13 +13,15 @@ const mainModule = (() => {
     
     window.addEventListener("load", function(){
         document.getElementById('start-button').style.visibility = 'hidden';
-        layout.builder();
+        //layout.builder();
+        layout.homePage();
     });
 
 
 
     arrow.onclick = function () {
         document.getElementById('start-button').style.visibility = 'visible'; 
+        document.getElementById('main-container').classList.add('no-background');
         layout.builder();
         categoryClick();
 

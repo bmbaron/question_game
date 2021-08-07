@@ -31,7 +31,7 @@ const categories = (() => {
         bread: "../src/images/foods/bread.png",
         chocolate: "../src/images/foods/chocolate.png",
         fish: "../src/images/foods/fish.png",
-        icecream: "../src/images/foods/icecream.png",
+        "ice cream": "../src/images/foods/icecream.png",
         pizza: "../src/images/foods/pizza.png",
         potatoes: "../src/images/foods/potatoes.png",
         rice: "../src/images/foods/rice.png",
@@ -57,7 +57,7 @@ const categories = (() => {
         home: "../src/images/places/home.png",
         hospital: "../src/images/places/hospital.png",
         park: "../src/images/places/park.png",
-        policestation: "../src/images/places/policestation.png",
+        "police station": "../src/images/places/policestation.png",
         supermarket: "../src/images/places/supermarket.png",
         toystore: "../src/images/places/toystore.png"
     };
