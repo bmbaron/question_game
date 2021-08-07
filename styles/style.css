@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Bebas Neue', cursive;
   font-weight: bold;
   
 }
@@ -140,7 +140,9 @@ body {
   justify-content: center;
   padding: 0;
   margin: 0;
-  font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  /*font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+  */
+  font-family: 'Bebas Neue', cursive;
   overflow: hidden;
 }
 
@@ -230,12 +232,6 @@ body {
   height: 83%;
 }
 
-.no-background .title {
-  /*visibility: hidden;*/
-}
-.no-background .description {
-  /*visibility: hidden; */
-}
 
 .main-container .title {
   position: relative;
@@ -298,7 +294,7 @@ body {
 .question:hover {
   cursor: pointer;
   transition: ease 0.2s all;
-  background: rgb(255, 180, 17);
+  background: rgb(255, 180, 17) !important;
   box-shadow: 3px 2px rgba(63, 60, 54, 0.616);
 
 }
@@ -324,7 +320,7 @@ body {
 
 
 .start-button {
-  margin-top: -2rem;
+  margin-top: -3.5rem;
   background: #38d15e;
   color: #fff;
   width: 15%;
@@ -444,7 +440,7 @@ body {
 
 @media only screen and (max-width: 575px) {
   .topbar .arrow {
-    width: 70px;
+    width: 85px;
   }
 
   .topbar .music {
@@ -452,6 +448,34 @@ body {
     width: 60px;
   }
 
+}
+
+.footer {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  height: 2rem;
+}
+
+.footer .point-box .dot {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.win-point {
+  background: #38d15e;
+}
+
+.lose-point {
+  background: #d13838;
+}
+
+.reset {
+  background: none;
 }
 
 

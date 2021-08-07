@@ -27,13 +27,13 @@ const categories = (() => {
     }; */
 
     const foods = {
-        hamburger: "../src/images/foods/hamburger.png",
+        vegetables: "../src/images/foods/vegetables.png",
         bread: "../src/images/foods/bread.png",
         chocolate: "../src/images/foods/chocolate.png",
-        fish: "../src/images/foods/fish.png",
-        "ice cream": "../src/images/foods/icecream.png",
-        pizza: "../src/images/foods/pizza.png",
-        potatoes: "../src/images/foods/potatoes.png",
+        eggs: "../src/images/foods/eggs.png",
+        sandwich: "../src/images/foods/sandwich.png",
+        fruit: "../src/images/foods/fruit.png",
+        tofu: "../src/images/foods/tofu.png",
         rice: "../src/images/foods/rice.png",
         soup: "../src/images/foods/soup.png"
     };

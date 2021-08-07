@@ -5,6 +5,23 @@ const layout = (() => {
     
     const mainContainer = document.getElementById('main-container');
     const gridContainer = document.getElementById('grid-container');
+    const pointBox = document.getElementById('point-box');
+    let numberAnswered = 0;
+    let numberCorrect = 0;
+    let numberWrong = 0;
+    let wordsToReview = [];
+
+    const getResults = () => {
+        let category = document.getElementById('category');
+        let categoryName = category.textContent;
+
+        if(numberCorrect == 9) {
+            return ('Great job! You know a lot of ' + categoryName + '!');
+        }
+        else {
+            return ('You know ' + numberCorrect + ' of the ' + categoryName +'! <br><br> You should practice these words: <br>' + wordsToReview);
+        }
+    }
 
     const homePage = () => {
 
@@ -19,13 +36,40 @@ const layout = (() => {
         description.classList.add('description');
         description.id = 'description';
 
-        mainContainer.appendChild(title, gridContainer);
+        mainContainer.appendChild(title);
         mainContainer.appendChild(description); 
+
+    };
+
+    const resultsPage = () => {
+
+    
+        let title = document.createElement('h1'); 
+        title.innerText = "Game Over";
+        title.classList.add('title');
+        title.id = 'title';
+
+        let description = document.createElement('p'); 
+        description.innerHTML = getResults();
+        description.classList.add('description');
+        description.id = 'description';
+
+        mainContainer.classList.remove('no-background');
+        mainContainer.appendChild(title);
+        mainContainer.appendChild(description);
 
     };
 
 
     const builder = () => {
+        numberAnswered = 0;
+        numberCorrect = 0;
+        mainContainer.classList.add('no-background');
+
+
+        while (pointBox.firstChild) {
+            pointBox.removeChild(pointBox.firstChild);
+        }
 
         let start = document.getElementById('start-text');
         start.innerHTML = 'random'; 
@@ -48,6 +92,10 @@ const layout = (() => {
                 div.classList.add('question');
 
                 div.onclick = function(e) {
+
+                    if (this.classList.contains('flipped')) {
+                        return;
+                    }
                     if(generator.questionBoxes.length == 1)
                     {
                         start.innerHTML = "play again";
@@ -78,8 +126,15 @@ const layout = (() => {
                 div.appendChild(h1);
                 row.appendChild(div);
             }
-            gridContainer.appendChild(row);              
+            gridContainer.appendChild(row);       
         }
+        for (let i=1; i<10; i++) {
+            let dot = document.createElement('div');
+            dot.classList.add('dot');
+            dot.id = 'point' + i;
+            pointBox.appendChild(dot);
+        }
+        console.log(pointBox);
     };
 
     let qBoxes = document.getElementsByClassName("question");
@@ -147,23 +202,35 @@ const layout = (() => {
     const timer = ms => new Promise(res => setTimeout(res, ms));
 
     const checkAnswer = async (answer, choice, button) => {
+        numberAnswered++;
+
         if (choice == answer)
         {
             musicManager.winSound();
             button.style.background = "#38d15e";
+            console.log(numberAnswered);
+            document.getElementById('point' + numberAnswered).classList.add('win-point');
+            numberCorrect++;
         }
         else {
             musicManager.loseSound();
-            button.style.background = "red";
+            button.style.background = "#d13838";
+            document.getElementById('point' + numberAnswered).classList.add('lose-point');
+            numberWrong++;
+            wordsToReview.push(' '+answer);
         }
 
-        await timer(1000);
+        //await timer(1000);
         let box = button.parentNode;
         let question = box.parentNode;
-        //boxToDelete[index].classList.toggle('flipped');
-        //boxToDelete[index].classList.add("hidden");
-        question.remove();
+
         generator.toggleAnswered();
+        question.remove();
+
+        if(qBoxes.length == 0) {
+            resultsPage();
+        }
+
         return;
     };
 
@@ -213,7 +280,8 @@ const layout = (() => {
     return {
         homePage,
         builder,
-        loadQuestions
+        loadQuestions,
+        getResults
     };
 })();
   
