@@ -15,7 +15,7 @@ const musicManager = (() => {
         }, */
         autoplay: true,
         loop: 1,
-        volume: 0.6
+        volume: 0.8
     });
 
     var win = new Howl({
@@ -52,7 +52,7 @@ const musicManager = (() => {
         else {
             music.children[0].innerText = 'music_note';
             music.style.background = '#38d15e';
-            background.volume('0.2');
+            background.volume('0.7');
             allowedToPlay = true;
             return;
         }

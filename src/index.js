@@ -17,8 +17,6 @@ const mainModule = (() => {
         layout.homePage();
     });
 
-
-
     arrow.onclick = function () {
         document.getElementById('start-button').style.visibility = 'visible'; 
         document.getElementById('main-container').classList.add('no-background');
@@ -30,20 +28,35 @@ const mainModule = (() => {
     const categoryClick = () => {
         if (counter == 0) {
             layout.loadQuestions(categories.foods);
-            category.textContent = "foods";
             color.style.background = "#EE8609";
+            if(layout.getCategoryFinishedStatus('foods')) {
+                category.textContent = layout.getCategoryResultText('foods');
+            }
+            else {
+                category.textContent = 'foods';
+            }
         }
 
         if (counter == 1) {
             layout.loadQuestions(categories.animals);
-            category.textContent = "animals";
             color.style.background = "#4a38d1";
+            if(layout.getCategoryFinishedStatus('animals')) {
+                category.textContent = layout.getCategoryResultText('animals');
+            }
+            else {
+                category.textContent = 'animals';
+            }
         }
         if (counter == 2) {
             layout.loadQuestions(categories.places);
-            category.textContent = "places";
             counter = counter - 3;
             color.style.background = "#e82788"; 
+            if(layout.getCategoryFinishedStatus('places')) {
+                category.textContent = layout.getCategoryResultText('places');
+            }
+            else {
+                category.textContent = 'places';
+            }
         }
         counter++;
     };

@@ -11,17 +11,114 @@ const layout = (() => {
     let numberWrong = 0;
     let wordsToReview = [];
 
+    let foodsFinished = false;
+    let animalsFinished = false;
+    let placesFinished = false;
+
+    let foodsResultText = '';
+    let animalsResultText = '';
+    let placesResultText = '';
+
+    let foodsPerfect = false;
+    let animalsPerfect = false;
+    let placesPerfect = false;
+
     const getResults = () => {
         let category = document.getElementById('category');
         let categoryName = category.textContent;
 
-        if(numberCorrect == 9) {
-            return ('Great job! You know a lot of ' + categoryName + '!');
+        if (categoryName.indexOf('foods') !== -1) {
+            foodsFinished = true;
+            foodsResultText = 'foods: ' + numberCorrect + '/9 correct';
+            console.log(foodsFinished, foodsResultText);
+            if(numberCorrect == 9) {
+                setPerfect('foods');
+                if (foodsPerfect && animalsPerfect && placesPerfect) {
+                    return ('WOW!!! You got all 27 words correct! You are an English pro!')
+                }
+                else {
+                    return ('Great job! You know a lot of foods!');
+                }
+            }
+            else {
+                return ('You know ' + numberCorrect + ' of the foods.<br><br>words to practice:<br>' + wordsToReview);
+            }
         }
-        else {
-            return ('You know ' + numberCorrect + ' of the ' + categoryName +'! <br><br> You should practice these words: <br>' + wordsToReview);
+        else if (categoryName.indexOf('animals') !== -1) {
+            animalsFinished = true;
+            animalsResultText = 'animals: ' + numberCorrect + '/9 correct';
+            console.log(animalsFinished, animalsResultText);
+            if(numberCorrect == 9) {
+                setPerfect('animals');
+                if (foodsPerfect && animalsPerfect && placesPerfect) {
+                    return ('WOW!!! You got all 27 words correct! You are an English pro!')
+                }
+                else {
+                    return ('Great job! You know a lot of animals!');
+                }
+            }
+            else {
+                return ('You know ' + numberCorrect + ' of the animals.<br><br>words to practice:<br>' + wordsToReview);
+            }
         }
+        else if (categoryName.indexOf('places') !== -1) {
+            placesFinished = true;
+            placesResultText = 'places: ' + numberCorrect + '/9 correct';
+            console.log(placesFinished, placesResultText);
+            if(numberCorrect == 9) {
+                setPerfect('places');
+                if (foodsPerfect && animalsPerfect && placesPerfect) {
+                    return ('WOW!!! You got all 27 words correct! You are an English pro!')
+                }
+                else {
+                    return ('Great job! You know a lot of places!');
+                }            }
+            else {
+                return ('You know ' + numberCorrect + ' of the places.<br><br>words to practice:<br>' + wordsToReview);
+            }
+        }
+
+
+
     }
+
+    const getCategoryFinishedStatus = (categ) => {
+
+        if(categ == 'foods') {
+            return (foodsFinished);
+        }
+        else if(categ == 'animals') {
+            return (animalsFinished);
+        }
+        else if(categ == 'places') {
+            return (placesFinished);
+        }
+
+    };
+
+    const getCategoryResultText = (categ) => {
+        if(categ == 'foods') {
+            return (foodsResultText);
+        }
+        else if(categ == 'animals') {
+            return (animalsResultText);
+        }
+        else if(categ == 'places') {
+            return (placesResultText);
+        }
+    };
+
+    const setPerfect = (categ) => {
+        if(categ == 'foods') {
+            foodsPerfect = true;
+        }
+        else if(categ == 'animals') {
+            animalsPerfect = true;
+        }
+        else if(categ == 'places') {
+            placesPerfect = true;
+        }
+    };
 
     const homePage = () => {
 
@@ -32,12 +129,15 @@ const layout = (() => {
         title.id = 'title';
 
         let description = document.createElement('p'); 
-        description.innerHTML = "practice English vocabulary <br> level: <strong>beginner</strong>";
+        description.innerHTML = "<span id='practice'>practice English vocabulary</span> <br><br> level: <span id='level'>beginner</span>";
         description.classList.add('description');
         description.id = 'description';
 
         mainContainer.appendChild(title);
-        mainContainer.appendChild(description); 
+        mainContainer.appendChild(description);
+
+        document.getElementById('practice').style.fontSize = '2rem';
+        document.getElementById('level').style.color = 'red';
 
     };
 
@@ -57,6 +157,10 @@ const layout = (() => {
         mainContainer.classList.remove('no-background');
         mainContainer.appendChild(title);
         mainContainer.appendChild(description);
+
+        while (pointBox.firstChild) {
+            pointBox.removeChild(pointBox.firstChild);
+        }
 
     };
 
@@ -220,7 +324,7 @@ const layout = (() => {
             wordsToReview.push(' '+answer);
         }
 
-        //await timer(1000);
+        await timer(800);
         let box = button.parentNode;
         let question = box.parentNode;
 
@@ -281,7 +385,9 @@ const layout = (() => {
         homePage,
         builder,
         loadQuestions,
-        getResults
+        getResults,
+        getCategoryFinishedStatus,
+        getCategoryResultText
     };
 })();
   
