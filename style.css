@@ -6,133 +6,7 @@
   box-sizing: border-box;
   font-family: 'Bebas Neue', cursive;
   font-weight: bold;
-  
 }
-/* 
-.form-container {
-  height: 0px;
-  width: 0px;
-  visibility: hidden;
-} 
-
-.wrapperLeft {
-  transition: ease 0.5s all;
-  position: fixed;
-  top: 1%;
-  left: -85%;
-  width: 90%;
-  height: 90%;
-  background: #fff;
-  margin: 20px auto;
-  border: 2px lightgrey solid;
-  border-radius: 10px;
-  /* box-shadow: 1px 1px 2px rgba(0,0,0,0.125);
-  margin-top: 2%;
-}
-
-.wrapperLeftShow{
-  transition: ease 0.5s all;
-  left: 0;
-}
-
-.wrapperRight {
-  transition: ease 0.5s all;
-  position: fixed;
-  top: 5.5%;
-  right: -40%;
-  width: 50%;
-  height: 90%;
-  background: #fff;
-  margin: 20px auto;
-  padding: 30px;
-  border: 2px lightgrey solid;
-  border-radius: 10px;
-  margin-top: 2%;
-}
-
-.wrapperRight:hover{
-  transition: ease 0.5s all;
-  right: 0;
-}
-
-
-.wrapper .title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  color: black;
-  text-align: center;
-}
-
-.wrapper .form {
-  width: 80%;
-  height: 100%;
-}
-
-.wrapper .form .input_field {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-}
-
-.wrapper .form .input_field label {
-  
-  width: 200px;
-  color: black;
-  margin-right: 10px;
-  font-size: 14px;
-}
-
-.wrapper .form .input_field .input{
-  width: 100%;
-  outline: none;
-  border: 1px solid #d5dbd9;
-  font-size: 15px;
-  padding: 8px 10px;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-  
-}
-
-.wrapper .form .input_field .input:focus{
-  border: 1px solid #fec107;
-}
-
-.wrapper .form .input_field .btn {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 8px 10px;
-  font-size: 15px;
-  border: 0;
-  background: #fec107;
-  color: #fff;
-  cursor: pointer;
-  border-radius: 3px;
-  outline: none;
-}
-
-.wrapper .form .input_field:last-child {
-  margin-bottom: 0;
-}
-
-.wrapper .form .input_field .btn:hover {
-  background: #ffd658;
-}
-
-@media (max-width: 600px) {
-  .wrapper .form .input_field {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .wrapper {
-      position: absolute;
-      height: 120%;
-  }
-
-} */
-
-
 
 body {
   transition: ease 1s all;
@@ -140,8 +14,6 @@ body {
   justify-content: center;
   padding: 0;
   margin: 0;
-  /*font-family:'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-  */
   font-family: 'Bebas Neue', cursive;
   overflow: hidden;
 }
@@ -154,15 +26,6 @@ body {
   text-align: center;
 }
 
-/* .topbar .logo {
-   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  height: 70%;
-  color: white;
-  content: url('../src/images/logo2.png'); 
-} */
 
 .topbar .arrow {
   position: fixed;
@@ -171,7 +34,7 @@ body {
   z-index: 1000;
   width: 100px;
   height: 100px;
-  background-image: url('src/images/right-arrow.png');
+  background-image: url('https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/right-arrow.png');
   background-size:contain;
   background-repeat: no-repeat;
 }
@@ -220,7 +83,7 @@ body {
   visibility: visible;
   width: 100%;
   height: 50%;
-  background: url('https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/right-arrow.png');
+  background: url('https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/dog.png');
   margin-left: auto;
   background-repeat: no-repeat;
   background-size: auto 100%;
