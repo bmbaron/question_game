@@ -3,15 +3,15 @@
 const categories = (() => {
 
     const animals = {
-        alligator: "src/images/animals/alligator.png",
-        bird: "src/images/animals/bird.png",
-        butterfly: "src/images/animals/butterfly.png",
-        cat: "src/images/animals/cat.png",
-        dog: "src/images/animals/dog.png",
-        elephant: "src/images/animals/elephant.png",
-        fish: "src/images/animals/fish.png",
-        snake: "src/images/animals/snake.png",
-        zebra: "src/images/animals/zebra.png"
+        alligator: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/animals/alligator.png",
+        bird: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/animals/bird.png",
+        butterfly: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/animals/butterfly.png",
+        cat: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/animals/cat.png",
+        dog: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/animals/dog.png",
+        elephant: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/animals/elephant.png",
+        fish: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/animals/fish.png",
+        snake: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/animals/snake.png",
+        zebra: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/animals/zebra.png"
     };
 
 /*     const animals = {
@@ -27,15 +27,15 @@ const categories = (() => {
     }; */
 
     const foods = {
-        vegetables: "src/images/foods/vegetables.png",
-        bread: "src/images/foods/bread.png",
-        chocolate: "src/images/foods/chocolate.png",
-        eggs: "src/images/foods/eggs.png",
-        sandwich: "src/images/foods/sandwich.png",
-        fruit: "src/images/foods/fruit.png",
-        tofu: "src/images/foods/tofu.png",
-        rice: "src/images/foods/rice.png",
-        soup: "src/images/foods/soup.png"
+        vegetables: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/foods/vegetables.png",
+        bread: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/foods/bread.png",
+        chocolate: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/foods/chocolate.png",
+        eggs: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/foods/eggs.png",
+        sandwich: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/foods/sandwich.png",
+        fruit: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/foods/fruit.png",
+        tofu: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/foods/tofu.png",
+        rice: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/foods/rice.png",
+        soup: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/foods/soup.png"
     };
 
 /*     const foods = {
@@ -51,15 +51,15 @@ const categories = (() => {
     }; */
 
     const places = {
-        classroom: "src/images/places/classroom.png",
-        bakery: "src/images/places/bakery.png",
-        beach: "src/images/places/beach.png",
-        home: "src/images/places/home.png",
-        hospital: "src/images/places/hospital.png",
-        park: "src/images/places/park.png",
-        "police station": "src/images/places/policestation.png",
-        supermarket: "src/images/places/supermarket.png",
-        toystore: "src/images/places/toystore.png"
+        classroom: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/places/classroom.png",
+        bakery: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/places/bakery.png",
+        beach: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/places/beach.png",
+        home: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/places/home.png",
+        hospital: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/places/hospital.png",
+        park: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/places/park.png",
+        "police station": "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/places/policestation.png",
+        supermarket: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/places/supermarket.png",
+        toystore: "https://raw.githubusercontent.com/bmbaron/question_game/main/src/images/places/toystore.png"
     };
 
 /*     const places = {

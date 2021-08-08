@@ -9,7 +9,7 @@ const musicManager = (() => {
     var allowedToPlay = true;
 
     var background = new Howl({
-        src: ['../src/sounds/Happy_Sunset.wav'],
+        src: ['https://raw.githubusercontent.com/bmbaron/question_game/main/src/sounds/Happy_Sunset.wav'],
 /*             sprite: {
             main: [2460, 8842, true]
         }, */
@@ -19,7 +19,7 @@ const musicManager = (() => {
     });
 
     var win = new Howl({
-        src: ['../src/sounds/win.wav'],
+        src: ['https://raw.githubusercontent.com/bmbaron/question_game/main/src/sounds/win.wav'],
 /*         sprite: {
             main: [0, 2000],
             volume: 2
@@ -27,7 +27,7 @@ const musicManager = (() => {
     });
 
     var lose = new Howl({
-        src: ['../src/sounds/lose.wav'],
+        src: ['https://raw.githubusercontent.com/bmbaron/question_game/main/src/sounds/lose.wav'],
 /*         sprite: {
             main: [0, 2000],
             volume: 2
