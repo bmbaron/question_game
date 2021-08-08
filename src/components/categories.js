@@ -3,15 +3,15 @@
 const categories = (() => {
 
     const animals = {
-        alligator: "../src/images/animals/alligator.png",
-        bird: "../src/images/animals/bird.png",
-        butterfly: "../src/images/animals/butterfly.png",
-        cat: "../src/images/animals/cat.png",
-        dog: "../src/images/animals/dog.png",
-        elephant: "../src/images/animals/elephant.png",
-        fish: "../src/images/animals/fish.png",
-        snake: "../src/images/animals/snake.png",
-        zebra: "../src/images/animals/zebra.png"
+        alligator: "./src/images/animals/alligator.png",
+        bird: "./src/images/animals/bird.png",
+        butterfly: "./src/images/animals/butterfly.png",
+        cat: "./src/images/animals/cat.png",
+        dog: "./src/images/animals/dog.png",
+        elephant: "./src/images/animals/elephant.png",
+        fish: "./src/images/animals/fish.png",
+        snake: "./src/images/animals/snake.png",
+        zebra: "./src/images/animals/zebra.png"
     };
 
 /*     const animals = {
@@ -27,15 +27,15 @@ const categories = (() => {
     }; */
 
     const foods = {
-        vegetables: "../src/images/foods/vegetables.png",
-        bread: "../src/images/foods/bread.png",
-        chocolate: "../src/images/foods/chocolate.png",
-        eggs: "../src/images/foods/eggs.png",
-        sandwich: "../src/images/foods/sandwich.png",
-        fruit: "../src/images/foods/fruit.png",
-        tofu: "../src/images/foods/tofu.png",
-        rice: "../src/images/foods/rice.png",
-        soup: "../src/images/foods/soup.png"
+        vegetables: "./src/images/foods/vegetables.png",
+        bread: "./src/images/foods/bread.png",
+        chocolate: "./src/images/foods/chocolate.png",
+        eggs: "./src/images/foods/eggs.png",
+        sandwich: "./src/images/foods/sandwich.png",
+        fruit: "./src/images/foods/fruit.png",
+        tofu: "./src/images/foods/tofu.png",
+        rice: "./src/images/foods/rice.png",
+        soup: "./src/images/foods/soup.png"
     };
 
 /*     const foods = {
@@ -51,15 +51,15 @@ const categories = (() => {
     }; */
 
     const places = {
-        classroom: "../src/images/places/classroom.png",
-        bakery: "../src/images/places/bakery.png",
-        beach: "../src/images/places/beach.png",
-        home: "../src/images/places/home.png",
-        hospital: "../src/images/places/hospital.png",
-        park: "../src/images/places/park.png",
-        "police station": "../src/images/places/policestation.png",
-        supermarket: "../src/images/places/supermarket.png",
-        toystore: "../src/images/places/toystore.png"
+        classroom: "./src/images/places/classroom.png",
+        bakery: "./src/images/places/bakery.png",
+        beach: "./src/images/places/beach.png",
+        home: "./src/images/places/home.png",
+        hospital: "./src/images/places/hospital.png",
+        park: "./src/images/places/park.png",
+        "police station": "./src/images/places/policestation.png",
+        supermarket: "./src/images/places/supermarket.png",
+        toystore: "./src/images/places/toystore.png"
     };
 
 /*     const places = {
